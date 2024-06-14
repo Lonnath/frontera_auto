@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class PesajeSubproductoConfig(AppConfig):
+class FronteraAutoModulosConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'pesaje_subproducto'
+    name = 'frontera_auto_modulos'

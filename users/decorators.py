@@ -8,7 +8,7 @@ from pytz import timezone
 import jwt
 
 def jwt_token_required(view_func):
-    def _wrapped_view(request, *args, **kwargs):
+    def _wrapped_view(request, *args, **kwargs): 
         auth_header = request.headers.get('Authorization')
         if auth_header:
             token = auth_header.split(' ')[1]
@@ -52,5 +52,4 @@ def jwt_token_required(view_func):
                 return JsonResponse({'error': 'Usuario no encontrado'}, status=401)
         else:
             return JsonResponse({'error': 'Token no proporcionado'}, status=401)
-
     return _wrapped_view
