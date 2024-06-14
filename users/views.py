@@ -32,7 +32,14 @@ def login(request):
                 {
                     'response': 'Usuario logueado correctamente',
                     'token': token,
-                    'username': user.usuario,
+                    'usuario': user.usuario,
+                    'nombre': user.nombre,
+                    'apellido': user.apellido,
+                    'fecha_nacimiento': user.fecha_nacimiento,
+                    'direccion': user.direccion,
+                    'telefono': user.telefono,
+                    'tipo_usuario': user.tipo_usuario,
+                    'cc_documento': user.cc_documento
                 }, status=200)
         
         else:

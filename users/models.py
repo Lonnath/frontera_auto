@@ -14,7 +14,7 @@ class Usuario(models.Model):
     cc_documento = models.IntegerField(blank=False, null=False, db_column="us_cc_documento", unique=True)
     
     def __str__(self):
-        return self.username
+        return self.usuario
 
     class Meta:
         db_table = "usuarios"
