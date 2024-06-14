@@ -1,5 +1,6 @@
 from django.db import models
 from users.models import Usuario
+from vicera.models import Vicera
 # Create your models here.
 
 class PesajeSubproducto(models.Model):
@@ -10,7 +11,8 @@ class PesajeSubproducto(models.Model):
     serie = models.IntegerField(blank=False, null=False, db_column="ps_serie")
     responsable = models.IntegerField(blank=False, null=False, db_column="ps_responsable")
     usuario = models.ForeignKey(Usuario, default=None, on_delete = models.DO_NOTHING, db_column='ps_fk_usuario')
-        
+    vicera = models.ForeignKey(Vicera, default=None, on_delete = models.DO_NOTHING, db_column='ps_fk_vicera')
+    
     def __str__(self):
         return self.serie
 

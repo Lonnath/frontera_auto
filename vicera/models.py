@@ -1,9 +1,7 @@
 from django.db import models
-from pesaje_subproducto.models import PesajeSubproducto
 
 class Vicera(models.Model):
     
-    pesaje_subproducto = models.ForeignKey(PesajeSubproducto, default=None, on_delete = models.DO_NOTHING, db_column='vc_fk_pesaje_subproducto')
     turno = models.IntegerField(blank=False, null=False, db_column="vc_turno")
     cifra = models.IntegerField(blank=False, null=False, db_column="vc_cifra")
     peso = models.IntegerField(blank=False, null=False, db_column="vc_peso")
