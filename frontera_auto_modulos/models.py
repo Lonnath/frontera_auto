@@ -23,14 +23,13 @@ class Decomiso (models.Model):
     ciudad = models.CharField(max_length=25, blank=False, null=False, db_column="dc_ciudad")
     producto = models.CharField(max_length=25, blank=False, null=False, db_column="dc_producto")
     serie = models.CharField(max_length=15, blank=False, null=False, db_column="dc_serie")
-    fecha = models.DateTimeField(blank=False, null=False, db_column="dc_fecha")
+    fecha = models.DateTimeField(auto_now=True, blank=False, null=False, db_column="dc_fecha")
     cifra = models.IntegerField(blank=False, null=False, db_column="dc_cifra")
     cantidad = models.IntegerField(blank=False, null=False, db_column="dc_cantidad")
     causa = models.CharField(max_length=255, blank=False, null=False, db_column="dc_causa")
-    profesional_cargo = models.IntegerField(blank=False, null=False, db_column="dc_profesional_cargo")
-    foto = models.CharField(max_length=150, blank=False, null=False, db_column="dc_foto")
-    veterinario = models.IntegerField(blank=False, null=False, db_column="dc_veterinario")
+    foto = models.ImageField(upload_to='fotos/', blank=False, null=False, db_column="dc_foto")
     turno = models.IntegerField(blank=False, null=False, db_column="dc_turno")
+    observacion = models.CharField(max_length=255, blank=True, null=False, db_column="dc_observacion")
     
     def __str__ (self) :
         return self.serie
